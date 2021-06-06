@@ -1,0 +1,1 @@
+export const URL_BACKEND = 'https://springboot-pockedex-backend.herokuapp.com';

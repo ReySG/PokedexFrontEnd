@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "pokedex-app-angular",
+    "pokedex": "pokedex-app-angular"
+  }
+}

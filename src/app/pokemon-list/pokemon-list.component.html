@@ -1,0 +1,24 @@
+<app-pokemon-info [pokemon]="pokemonSelected"></app-pokemon-info>
+<div class="pokemon-grid" id="titulo">
+  <p>Haz click en el pokemon para ver mas detalles</p>
+</div>
+
+<div class="pokemon card-group">
+  <div class="card"
+    *ngFor="let pokemon of pokemons | paginate: {itemsPerPage: 10, currentPage: page, totalItems: totalPokemons} ">
+    <img [src]="pokemon.sprites.front_default" alt="Pokemon" (click)="openModal(pokemon)" style="cursor: pointer;">
+    <h3>{{pokemon.id}}. {{ pokemon.name }}</h3>
+    <p>
+      <b>Type:</b> {{ pokemon.types[0].type.name }}
+    </p>
+    <p>
+      <b>weight:</b> {{ pokemon.weight }}
+    </p>
+    <p>
+      <b>Abilities:</b> {{ pokemon.abilities[0].ability.name }}
+    </p>
+  </div>
+
+</div>
+
+<pagination-controls (pageChange)="page = $event; pokemons = []; getPokemons()"></pagination-controls>
